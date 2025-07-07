@@ -1,6 +1,6 @@
 {
   "name": "looptid-homepage",
-  "description": "Build a personal website, blog, or portfolio with Astro.",
+  "description": "The homepage for Looptid Microsystems, LLC.",
   "cloudflare": {
     "label": "Astro Framework Starter",
     "products": [
