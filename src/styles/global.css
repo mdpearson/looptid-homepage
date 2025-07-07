@@ -153,3 +153,18 @@ hr {
   /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
   white-space: nowrap;
 }
+
+.brand-lockup {
+  align-items: center;
+  display: flex;
+  gap: 0.1em; /* space between logo and text */
+}
+
+.brand-lockup img {
+  border: 1px solid #efc23c; /* Add this line for a colored border */
+  border-radius: 7px;
+  height: 40px;
+  margin-bottom: 4px;
+  margin-top: 0px;
+  width: auto;
+}
