@@ -17,29 +17,41 @@
     0 16px 32px rgba(var(--gray), 33%);
 }
 @font-face {
-  font-family: "Atkinson";
-  src: url("/fonts/atkinson-regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
   font-display: swap;
+  font-family: "Bungee", sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 @font-face {
-  font-family: "Atkinson";
-  src: url("/fonts/atkinson-bold.woff") format("woff");
+  font-display: swap;
+  font-family: "Bungee", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-display: swap;
+  font-family: "Input", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/input.ttf") format("truetype");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Input", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  src: url("/fonts/inputb.ttf") format("truetype");
 }
+
 body {
-  font-family: "Atkinson", sans-serif;
+  font-family: "Input", sans-serif;
   margin: 0;
   padding: 0;
   text-align: left;
   background: linear-gradient(var(--gray-gradient)) no-repeat;
   background-size: 100% 600px;
   word-wrap: break-word;
-  overflow-wrap: break-word;
-  color: rgb(var(--gray-dark));
+  overflow-wrap: break-word;  color: rgb(var(--gray-dark));
   font-size: 20px;
   line-height: 1.7;
 }
@@ -54,8 +66,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  margin: 0 0 0.5rem 0;
+h6 {  margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
   line-height: 1.2;
 }
@@ -70,16 +81,14 @@ h3 {
 }
 h4 {
   font-size: 1.563em;
-}
-h5 {
+}h5 {
   font-size: 1.25em;
 }
 strong,
 b {
   font-weight: 700;
 }
-a {
-  color: var(--accent);
+a {  color: var(--accent);
 }
 a:hover {
   color: var(--accent);
@@ -157,14 +166,17 @@ hr {
 .brand-lockup {
   align-items: center;
   display: flex;
-  gap: 0.1em; /* space between logo and text */
+  gap: 0em; /* space between logo and text */
+}
+
+.brand-lockup h2 {
+  font-family: "Bungee";
 }
 
 .brand-lockup img {
-  border: 1px solid #efc23c; /* Add this line for a colored border */
-  border-radius: 7px;
   height: 40px;
-  margin-bottom: 4px;
+  margin-bottom: 0px;
   margin-top: 0px;
+  margin-right: -6px;
   width: auto;
 }
