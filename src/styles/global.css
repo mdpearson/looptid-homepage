@@ -29,22 +29,21 @@
   font-weight: 700;
 }
 @font-face {
-  font-display: swap;
-  font-family: "Input", sans-serif;
+  font-family: 'Gimlet Sans UnMono Web';
   font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/input.ttf") format("truetype");
+  font-weight: 300 800;
+  src: url('/fonts/GimletSansUnMono[opsz,slnt,wght]_BETA.woff2') format("woff2");
 }
+
 @font-face {
-  font-display: swap;
-  font-family: "Input", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  src: url("/fonts/inputb.ttf") format("truetype");
+  font-family: 'Gimlet Sans Variable Web';
+  font-weight: 300 900;
+  src: url('/fonts/GimletSansVariable[ital,opsz,wght].woff2') format("woff2"),
+       url('/fonts/GimletSansVariable[ital,opsz,wght].woff') format("woff");
 }
 
 body {
-  font-family: "Input", sans-serif;
+  font-family: "Gimlet Sans Variable Web", sans-serif;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -52,8 +51,9 @@ body {
   background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;  color: rgb(var(--gray-dark));
-  font-size: 20px;
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.5;
+  font-variation-settings: 'opsz' 12;
 }
 main {
   width: 720px;
@@ -71,18 +71,24 @@ h6 {  margin: 0 0 0.5rem 0;
   line-height: 1.2;
 }
 h1 {
-  font-size: 3.052em;
+  font-size: 2.074em; /* ~41px */
+  font-variation-settings: 'opsz' 30;
 }
 h2 {
-  font-size: 2.441em;
+  font-size: 1.728em; /* ~35px */
+  font-variation-settings: 'opsz' 24;
 }
 h3 {
-  font-size: 1.953em;
+  font-size: 1.44em; /* ~29px */
+  font-variation-settings: 'opsz' 20;
 }
 h4 {
-  font-size: 1.563em;
-}h5 {
-  font-size: 1.25em;
+  font-size: 1.2em; /* ~24px */
+  font-variation-settings: 'opsz' 16;
+}
+h5 {
+  font-size: 1em; /* ~20px */
+  font-variation-settings: 'opsz' 12;
 }
 strong,
 b {
