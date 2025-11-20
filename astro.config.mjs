@@ -7,11 +7,12 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
-  integrations: [mdx(), sitemap()],
   adapter: cloudflare({
+    imageService: "compile",
     platformProxy: {
       enabled: true,
     },
   }),
+  integrations: [mdx(), sitemap()],
+  site: "https://looptid.io",
 });
