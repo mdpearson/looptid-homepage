@@ -1,12 +1,14 @@
 ---
+import { Image } from 'astro:assets';
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+import logo from '/public/looptid-logo-transparent.png';
 ---
 
 <header>
 	<nav>
 		<div class="brand-lockup">
-		<img src="/looptid-logo-transparent.png" alt="Looptid Microsystems Logo" />
+		<Image src={logo} alt="Looptid Microsystems Logo" loading="eager" />
 		<h2>
 			<a href="/">{SITE_TITLE}</a>
 		</h2>
