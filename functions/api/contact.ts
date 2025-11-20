@@ -20,22 +20,41 @@ interface Env {
 export async function onRequestPost(context: EventContext<Env, any, Record<string, unknown>>): Promise<Response> {
   const { request, env } = context;
 
+  const corsHeaders = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+
+  // Handle OPTIONS preflight request
+  if (request.method === 'OPTIONS') {
+    return new Response(null, { headers: corsHeaders });
+  }
+
   // Parse form data
   let formData: ContactFormData;
   try {
     formData = await request.json();
-  } catch {
+  } catch (error) {
+    console.error('JSON parse error:', error);
     return new Response(JSON.stringify({ message: 'Invalid request format' }), {
       status: 400,
-      headers: { 'Content-Type': 'application/json' },
+      headers: corsHeaders,
     });
   }
 
   // Validate required fields
   if (!formData.name || !formData.email || !formData.message || !formData['cf-turnstile-response']) {
+    console.error('Missing required fields:', { 
+      hasName: !!formData.name, 
+      hasEmail: !!formData.email, 
+      hasMessage: !!formData.message, 
+      hasTurnstile: !!formData['cf-turnstile-response'] 
+    });
     return new Response(JSON.stringify({ message: 'Missing required fields' }), {
       status: 400,
-      headers: { 'Content-Type': 'application/json' },
+      headers: corsHeaders,
     });
   }
 
@@ -47,9 +66,10 @@ export async function onRequestPost(context: EventContext<Env, any, Record<strin
   );
 
   if (!turnstileValid) {
+    console.error('Turnstile validation failed');
     return new Response(JSON.stringify({ message: 'Captcha verification failed' }), {
       status: 403,
-      headers: { 'Content-Type': 'application/json' },
+      headers: corsHeaders,
     });
   }
 
@@ -59,16 +79,16 @@ export async function onRequestPost(context: EventContext<Env, any, Record<strin
     
     return new Response(JSON.stringify({ message: 'Message sent successfully' }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: corsHeaders,
     });
   } catch (error) {
     console.error('Email sending failed:', error);
     return new Response(JSON.stringify({ message: 'Failed to send message' }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' },
+      headers: corsHeaders,
     });
   }
-};
+}
 
 /**
  * Verify Cloudflare Turnstile token

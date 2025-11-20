@@ -57,6 +57,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
 
+    // Get the Turnstile token
+    const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+    if (!turnstileToken) {
+      status.textContent = 'Please complete the security check.';
+      status.className = 'error';
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+      }
+      return;
+    }
+    data['cf-turnstile-response'] = turnstileToken;
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -70,10 +83,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         form.reset();
       } else {
         const error = await response.json();
+        console.error('Server error:', response.status, error);
         status.textContent = error.message || 'Something went wrong. Please try again.';
         status.className = 'error';
       }
     } catch (err) {
+      console.error('Network error:', err);
       status.textContent = 'Network error. Please try again.';
       status.className = 'error';
     } finally {
