@@ -134,35 +134,42 @@ Message:
 ${formData.message}
   `.trim();
 
+  const emailPayload = {
+    personalizations: [
+      {
+        to: [{ email: recipientEmail }],
+      },
+    ],
+    from: {
+      email: 'noreply@looptid.io',
+      name: 'Looptid Contact Form',
+    },
+    reply_to: {
+      email: formData.email,
+      name: formData.name,
+    },
+    subject: `Contact Form: ${formData.name}${formData.organization ? ' from ' + formData.organization : ''}`,
+    content: [
+      {
+        type: 'text/plain',
+        value: emailContent,
+      },
+    ],
+  };
+
+  console.log('Sending email with payload:', JSON.stringify(emailPayload, null, 2));
+
   const response = await fetch('https://api.mailchannels.net/tx/v1/send', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      personalizations: [
-        {
-          to: [{ email: recipientEmail }],
-          reply_to: { email: formData.email, name: formData.name },
-        },
-      ],
-      from: {
-        email: 'noreply@looptid.io',
-        name: 'Looptid Contact Form',
-      },
-      subject: `Contact Form: ${formData.name}${formData.organization ? ' from ' + formData.organization : ''}`,
-      content: [
-        {
-          type: 'text/plain',
-          value: emailContent,
-        },
-      ],
-    }),
+    body: JSON.stringify(emailPayload),
   });
 
   if (!response.ok) {
     const errorText = await response.text();
     console.error('MailChannels API error:', response.status, errorText);
-    throw new Error(`Failed to send email: ${response.status}`);
+    throw new Error(`Failed to send email: ${response.status} - ${errorText}`);
   }
 }
