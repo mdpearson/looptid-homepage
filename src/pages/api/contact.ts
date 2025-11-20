@@ -1,8 +1,10 @@
 /**
- * Cloudflare Pages Function to handle contact form submissions
+ * Astro API endpoint to handle contact form submissions
  * 
- * This Worker validates Turnstile captcha and sends email via MailChannels
+ * This validates Turnstile captcha and sends email via MailChannels
  */
+
+import type { APIRoute } from 'astro';
 
 interface ContactFormData {
   name: string;
@@ -12,14 +14,9 @@ interface ContactFormData {
   'cf-turnstile-response': string;
 }
 
-interface Env {
-  TURNSTILE_SECRET_KEY: string;
-  CONTACT_EMAIL: string;
-}
+export const prerender = false;
 
-export async function onRequestPost(context: EventContext<Env, any, Record<string, unknown>>): Promise<Response> {
-  const { request, env } = context;
-
+export const POST: APIRoute = async ({ request, locals }) => {
   const corsHeaders = {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
@@ -30,6 +27,17 @@ export async function onRequestPost(context: EventContext<Env, any, Record<strin
   // Handle OPTIONS preflight request
   if (request.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  // Get environment variables from Cloudflare runtime
+  const env = locals.runtime?.env as { TURNSTILE_SECRET_KEY?: string; CONTACT_EMAIL?: string };
+  
+  if (!env?.TURNSTILE_SECRET_KEY || !env?.CONTACT_EMAIL) {
+    console.error('Missing environment variables');
+    return new Response(JSON.stringify({ message: 'Server configuration error' }), {
+      status: 500,
+      headers: corsHeaders,
+    });
   }
 
   // Parse form data
@@ -88,7 +96,7 @@ export async function onRequestPost(context: EventContext<Env, any, Record<strin
       headers: corsHeaders,
     });
   }
-}
+};
 
 /**
  * Verify Cloudflare Turnstile token
@@ -115,10 +123,7 @@ async function verifyTurnstile(
 }
 
 /**
- * Send email using Cloudflare Email Routing + MailChannels
- * 
- * Cloudflare Workers can send email for free using MailChannels integration
- * No API key needed - it's built into Cloudflare Workers
+ * Send email using MailChannels
  */
 async function sendEmail(formData: ContactFormData, recipientEmail: string): Promise<void> {
   const emailContent = `
