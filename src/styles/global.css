@@ -14,9 +14,9 @@
     0 16px 32px rgba(var(--gray), 33%);
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
-  --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
   --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+  --gray-light: 229, 233, 240;
 }
 
 @font-face {
@@ -70,7 +70,7 @@ body {
   background-size: 100% 600px;
   color: rgb(var(--gray-dark));
   font-family: "Job Clarendon", serif;
-  font-size: 15px;
+  font-size: 1rem;
   font-variation-settings: "opsz" 12;
   line-height: 1.7;
   margin: 0;
@@ -87,13 +87,67 @@ main {
   width: 720px;
 }
 
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--accent-active);
+  text-decoration: underline;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+blockquote {
+  border-left: 0.25rem solid var(--accent);
+  font-size: 1.333em;
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  border-radius: 0.25rem;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+}
+
+button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+code {
+  background-color: rgb(var(--gray-light));
+  border-radius: 0.125rem;
+  padding: 0.125rem 0.3125rem;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-label {
+h6 {
   color: rgb(var(--black));
   font-family: "Gimlet Sans", sans-serif;
   line-height: 1.2;
@@ -101,100 +155,28 @@ label {
 }
 
 h1 {
-  font-size: 2.0em; /* 36px at 16px base */
-  font-variation-settings: "opsz" 36;
-}
-
-h2 {
-  font-size: 1.75em; /* ~32px at 16px base */
+  font-size: 2rem;
   font-variation-settings: "opsz" 32;
 }
 
+h2 {
+  font-size: 1.75rem;
+  font-variation-settings: "opsz" 28;
+}
+
 h3 {
-  font-size: 1.5em; /* ~27px at 16px base */
-  font-variation-settings: "opsz" 27;
+  font-size: 1.5rem;
+  font-variation-settings: "opsz" 24;
 }
 
 h4 {
-  font-size: 1.2em; /* ~22px at 16px base */
-  font-variation-settings: "opsz" 22;
+  font-size: 1.2rem;
+  font-variation-settings: "opsz" 19;
 }
 
 h5 {
-  font-size: 1em; /* ~18px base */
-  font-variation-settings: "opsz" 18;
-}
-
-strong,
-b {
-  font-weight: 700;
-}
-
-p {
-  margin-bottom: 1em;
-}
-
-p a {
-  text-decoration: none;
-}
-
-a {
-  color: var(--accent);
-  transition: color 0.15s ease-in-out;
-}
-
-a:hover {
-  color: var(--accent-hover);
-}
-
-a:active {
-  color: var(--accent-active);
-}
-
-input {
-  background: var(--bg-page);
-  color: rgb(var(--gray-dark));
-  font-size: 16px;
-}
-
-textarea {
-  background: var(--bg-page);
-  border: 1px solid rgb(var(--gray-light));
-  color: rgb(var(--gray-dark));
-  font-size: 16px;
-  width: 100%;
-}
-
-table {
-  width: 100%;
-}
-
-img {
-  border-radius: 8px;
-  height: auto;
-  max-width: 100%;
-}
-
-code {
-  background-color: rgb(var(--gray-light));
-  border-radius: 2px;
-  padding: 2px 5px;
-}
-
-pre {
-  border-radius: 8px;
-  padding: 1.5em;
-}
-
-pre > code {
-  all: unset;
-}
-
-blockquote {
-  border-left: 4px solid var(--accent);
-  font-size: 1.333em;
-  margin: 0px;
-  padding: 0 0 0 20px;
+  font-size: 1rem;
+  font-variation-settings: "opsz" 16;
 }
 
 hr {
@@ -202,8 +184,105 @@ hr {
   border-top: 1px solid rgb(var(--gray-light));
 }
 
+
+img {
+  border-radius: 0.5rem;
+  height: auto;
+  max-width: 100%;
+}
+
+input,
+textarea {
+  background: var(--bg-page);
+  border: 1px solid rgb(var(--gray-light));
+  border-radius: 0.25rem;
+  color: rgb(var(--gray-dark));
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.75rem;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.1875rem rgba(var(--gray), 20%);
+  outline: none;
+}
+
+label {
+  color: rgb(var(--black));
+  display: block;
+  font-family: "Gimlet Sans", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 0.5rem 0;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+pre {
+  border-radius: 0.5rem;
+  padding: 1.5em;
+}
+
+pre > code {
+  all: unset;
+}
+
+table {
+  width: 100%;
+}
+
+.brand-lockup {
+  align-items: center;
+  display: flex;
+  gap: 0.5em;
+}
+
+.brand-lockup h2 {
+  font-family: "Gimlet Sans UnMono", monospace;
+  letter-spacing: 0.15em;
+}
+
+.brand-lockup h2 a,
+.brand-lockup h2 span {
+  letter-spacing: 0.15em;
+}
+
+.brand-lockup img {
+  height: 2.5rem;
+  margin-bottom: 0;
+  margin-right: -0.375rem;
+  margin-top: 0;
+  width: auto;
+}
+
+.internal-links,
+footer {
+  font-family: "Gimlet Sans", sans-serif;
+}
+
 .prose p {
   margin-bottom: 2em;
+}
+
+.social-links {
+  display: flex;
+  gap: 1em;
+}
+
+.social-links a {
+  color: rgb(var(--gray));
+  display: flex;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: rgb(var(--gray-dark));
 }
 
 .sr-only {
@@ -220,33 +299,9 @@ hr {
   width: 1px;
 }
 
-.brand-lockup {
-  align-items: center;
-  display: flex;
-  gap: 0.5em;
-}
-
-.brand-lockup h2 {
-  font-family: "Gimlet Sans UnMono", monospace;
-  letter-spacing: 0.15em;
-}
-
-.brand-lockup img {
-  height: 40px;
-  margin-bottom: 0px;
-  margin-right: -6px;
-  margin-top: 0px;
-  width: auto;
-}
-
-.internal-links,
-footer {
-  font-family: "Gimlet Sans", sans-serif;
-}
-
 @media (max-width: 720px) {
   body {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   main {

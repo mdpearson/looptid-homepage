@@ -116,71 +116,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 1.5rem;
   }
 
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-family: inherit;
-    line-height: 1.5;
-  }
-
-  input:focus,
-  textarea:focus {
-    outline: none;
-    border-color: #0066cc;
-    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
-  }
-
-  button {
-    background: var(--accent);
-    color: white;
-    padding: 0.75rem 2rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-
-  button:hover:not(:disabled) {
-    background: var(--accent-dark);
-  }
-
-  button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-
   .cf-turnstile {
     margin: 1.5rem 0;
   }
 
   #form-status {
+    border-radius: 0.25rem;
     margin-top: 1rem;
     padding: 1rem;
-    border-radius: 4px;
   }
 
   #form-status.success {
     background: #d4edda;
-    color: #155724;
     border: 1px solid #c3e6cb;
+    color: #155724;
   }
 
   #form-status.error {
     background: #f8d7da;
-    color: #721c24;
     border: 1px solid #f5c6cb;
+    color: #721c24;
   }
 
   #form-status:empty {

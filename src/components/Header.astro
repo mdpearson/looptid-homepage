@@ -3,6 +3,9 @@ import { Image } from 'astro:assets';
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 import logo from '/public/looptid-logo-transparent.png';
+
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
+const isHome = pathname === '/' || pathname === '';
 ---
 
 <header>
@@ -10,7 +13,7 @@ import logo from '/public/looptid-logo-transparent.png';
 		<div class="brand-lockup">
 		<Image src={logo} alt="Looptid Microsystems Logo" loading="eager" />
 		<h2>
-			<a href="/">{SITE_TITLE.toUpperCase()}</a>
+			<a href="/" class:list={{ 'disabled-link': isHome }}>{SITE_TITLE.toUpperCase()}</a>
 		</h2>
 		</div>
 		<div class="internal-links">
@@ -23,7 +26,7 @@ import logo from '/public/looptid-logo-transparent.png';
 <style>
 	header {
 		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		box-shadow: 0 0.125rem 0.5rem rgba(var(--black), 5%);
 		margin: 0;
 		padding: 0 1em;
 	}
@@ -35,7 +38,7 @@ import logo from '/public/looptid-logo-transparent.png';
 	}
 
 	nav a {
-		border-bottom: 4px solid transparent;
+		border-bottom: 0.25rem solid transparent;
 		color: rgb(var(--black));
 		padding: 0.75em 0.5em 0.5em 0.5em;
 		text-decoration: none;
@@ -56,14 +59,13 @@ import logo from '/public/looptid-logo-transparent.png';
 		margin: 0;
 	}
 
-	h2 a,
-	h2 a.active {
+	h2 a {
 		text-decoration: none;
 	}
 
-	.social-links,
-	.social-links a {
-		display: flex;
+	h2 a.disabled-link {
+		cursor: default;
+		pointer-events: none;
 	}
 
 	@media (max-width: 720px) {
