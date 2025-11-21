@@ -129,7 +129,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   button {
-    background: #0066cc;
+    background: var(--accent);
     color: white;
     padding: 0.75rem 2rem;
     border: none;
@@ -141,7 +141,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   button:hover:not(:disabled) {
-    background: #0052a3;
+    background: var(--accent-dark);
   }
 
   button:disabled {

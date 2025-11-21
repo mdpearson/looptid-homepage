@@ -17,18 +17,6 @@
     0 16px 32px rgba(var(--gray), 33%);
 }
 @font-face {
-  font-display: swap;
-  font-family: "Bungee", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-display: swap;
-  font-family: "Bungee", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-}
-@font-face {
   font-family: 'Gimlet Sans UnMono Web';
   font-style: normal;
   font-weight: 300 800;
@@ -43,21 +31,20 @@
 }
 
 @font-face {
-    src: url('fonts/FernVariable-Roman-VF.woff2') format("woff2"),
-         url('fonts/FernVariable-Roman-VF.woff') format("woff");
+    src: url('/fonts/FernVariable-Roman-VF.woff2') format("woff2"),
+         url('/fonts/FernVariable-Roman-VF.woff') format("woff");
     font-family: 'Fern Web';
     font-style: normal;
     font-weight: 400 800;
-    }
-
+}
 
 @font-face {
-    src: url('fonts/FernVariable-Italic-VF.woff2') format("woff2"),
-         url('fonts/FernVariable-Italic-VF.woff') format("woff");
+    src: url('/fonts/FernVariable-Italic-VF.woff2') format("woff2"),
+         url('/fonts/FernVariable-Italic-VF.woff') format("woff");
     font-family: 'Fern Web';
     font-style: italic;
     font-weight: 400 800;
-    }
+}
 
 body {
   font-family: "Fern Web", serif;
