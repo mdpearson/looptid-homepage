@@ -22,40 +22,50 @@ import logo from '/public/looptid-logo-transparent.png';
 </header>
 <style>
 	header {
-		margin: 0;
-		padding: 0 1em;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		margin: 0;
+		padding: 0 1em;
 	}
+
+	nav {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	nav a {
+		border-bottom: 4px solid transparent;
+		color: rgb(var(--black));
+		padding: 0.75em 0.5em 0.5em 0.5em;
+		text-decoration: none;
+	}
+
+	nav a:hover:not(.active) {
+		color: var(--accent);
+	}
+
+	nav a.active {
+		border-bottom-color: var(--accent-active);
+		text-decoration: none;
+	}
+
 	h2 {
 		display: flex;
-		margin: 0;
 		font-size: 1em;
+		margin: 0;
 	}
 
 	h2 a,
 	h2 a.active {
 		text-decoration: none;
 	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 0.75em 0.5em 0.5em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
+
 	.social-links,
 	.social-links a {
 		display: flex;
 	}
+
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
