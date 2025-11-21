@@ -13,10 +13,17 @@
     0 8px 24px rgba(var(--gray), 33%),
     0 16px 32px rgba(var(--gray), 33%);
   --black: 15, 18, 25;
+  --error-bg: #f8d7da; /* bootstrap red-100 */
+  --error-border: #ea868f; /* bootstrap red-300 */
+  --error-text: #842029; /* bootstrap red-700 */
+  --focus-ring: #0a58ca20; /* --accent with 1/8 opacity */
   --gray: 96, 115, 159;
   --gray-dark: 34, 41, 57;
   --gray-gradient: rgba(var(--gray-light), 50%), #fff;
   --gray-light: 229, 233, 240;
+  --success-bg: #d1e7dd; /* bootstrap green-100 */
+  --success-border: #75b798; /* bootstrap green-300 */
+  --success-text: #0f5132; /* bootstrap green-700 */
 }
 
 @font-face {
@@ -207,7 +214,7 @@ textarea {
 input:focus,
 textarea:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 0.1875rem rgba(var(--gray), 20%);
+  box-shadow: 0 0 0 0.25rem var(--focus-ring);
   outline: none;
 }
 
