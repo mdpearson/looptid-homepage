@@ -36,14 +36,31 @@
 }
 
 @font-face {
-  font-family: 'Gimlet Sans Variable Web';
+  font-family: 'Gimlet Sans Web';
   font-weight: 300 900;
   src: url('/fonts/GimletSansVariable[ital,opsz,wght].woff2') format("woff2"),
        url('/fonts/GimletSansVariable[ital,opsz,wght].woff') format("woff");
 }
 
+@font-face {
+    src: url('fonts/FernVariable-Roman-VF.woff2') format("woff2"),
+         url('fonts/FernVariable-Roman-VF.woff') format("woff");
+    font-family: 'Fern Web';
+    font-style: normal;
+    font-weight: 400 800;
+    }
+
+
+@font-face {
+    src: url('fonts/FernVariable-Italic-VF.woff2') format("woff2"),
+         url('fonts/FernVariable-Italic-VF.woff') format("woff");
+    font-family: 'Fern Web';
+    font-style: italic;
+    font-weight: 400 800;
+    }
+
 body {
-  font-family: "Gimlet Sans Variable Web", sans-serif;
+  font-family: "Fern Web", serif;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -53,7 +70,7 @@ body {
   overflow-wrap: break-word;  color: rgb(var(--gray-dark));
   font-size: 18px;
   line-height: 1.5;
-  font-variation-settings: 'opsz' 12;
+  font-variation-settings: 'opsz' 18;
 }
 main {
   width: 720px;
@@ -66,38 +83,45 @@ h2,
 h3,
 h4,
 h5,
-h6 {  margin: 0 0 0.5rem 0;
+h6,
+label {  margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
+  font-family: "Gimlet Sans Web", sans-serif;
   line-height: 1.2;
 }
 h1 {
-  font-size: 2.074em; /* ~41px */
-  font-variation-settings: 'opsz' 30;
+  font-size: 2.0em; /* 36px at 16px base */
+  font-variation-settings: 'opsz' 36;
 }
 h2 {
-  font-size: 1.728em; /* ~35px */
-  font-variation-settings: 'opsz' 24;
+  font-size: 1.75em; /* ~32px at 16px base */
+  font-variation-settings: 'opsz' 32;
 }
 h3 {
-  font-size: 1.44em; /* ~29px */
-  font-variation-settings: 'opsz' 20;
+  font-size: 1.5em; /* ~27px at 16px base */
+  font-variation-settings: 'opsz' 27;
 }
 h4 {
-  font-size: 1.2em; /* ~24px */
-  font-variation-settings: 'opsz' 16;
+  font-size: 1.2em; /* ~22px at 16px base */
+  font-variation-settings: 'opsz' 22;
 }
 h5 {
-  font-size: 1em; /* ~20px */
-  font-variation-settings: 'opsz' 12;
+  font-size: 1em; /* ~18px base */
+  font-variation-settings: 'opsz' 18;
 }
 strong,
 b {
   font-weight: 700;
 }
-a {  color: var(--accent);
+a {
+  color: var(--accent);
 }
 a:hover {
   color: var(--accent);
+}
+p a {
+  text-decoration: none;
+  font-style: italic;
 }
 p {
   margin-bottom: 1em;
@@ -176,7 +200,7 @@ hr {
 }
 
 .brand-lockup h2 {
-  font-family: "Bungee";
+  font-family: "Gimlet Sans UnMono Web", monospace;
 }
 
 .brand-lockup img {
@@ -185,4 +209,8 @@ hr {
   margin-top: 0px;
   margin-right: -6px;
   width: auto;
+}
+
+.internal-links {
+  font-family: "Gimlet Sans Web", sans-serif;
 }

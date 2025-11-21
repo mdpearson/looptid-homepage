@@ -37,7 +37,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
   // Get environment variables from Cloudflare runtime
   const env = locals.runtime?.env as Env;
-  
+
   if (!env?.TURNSTILE_SECRET_KEY || !env?.CONTACT_EMAIL || !env?.RESEND_API_KEY) {
     console.error('Missing environment variables');
     return new Response(JSON.stringify({ message: 'Server configuration error' }), {
@@ -88,7 +88,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
   // Send email
   try {
     await sendEmail(formData, env.CONTACT_EMAIL, env.RESEND_API_KEY);
-    
+
     return new Response(JSON.stringify({ message: 'Message sent successfully' }), {
       status: 200,
       headers: corsHeaders,
@@ -160,7 +160,7 @@ ${formData.message}
     console.error('Resend API error:', response.status, errorText);
     throw new Error(`Failed to send email: ${response.status} - ${errorText}`);
   }
-  
+
   const result = await response.json();
   console.log('Email sent successfully:', result);
 }
