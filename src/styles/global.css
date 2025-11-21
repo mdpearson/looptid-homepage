@@ -22,19 +22,19 @@
   font-family: "Gimlet Sans UnMono";
   font-style: normal;
   font-weight: 300 800;
-  src: url("/fonts/GimletSansUnMono[opsz,slnt,wght]_BETA.woff2") format("woff2");
+  src: url("/fonts/GimletSansUnMono_BETA.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Gimlet Sans";
   font-weight: 300 900;
-  src: url("/fonts/GimletSansVariable[ital,opsz,wght].woff2") format("woff2"),
-       url("/fonts/GimletSansVariable[ital,opsz,wght].woff") format("woff");
+  src: url("/fonts/GimletSansVariable.woff2") format("woff2"),
+       url("/fonts/GimletSansVariable.woff") format("woff");
 }
 
 @font-face {
-    src: url("fonts/JobClarendonText-Regular.woff2") format("woff2"),
-         url("fonts/JobClarendonText-Regular.woff") format("woff");
+    src: url("/fonts/JobClarendonText-Regular.woff2") format("woff2"),
+         url("/fonts/JobClarendonText-Regular.woff") format("woff");
     font-family: "Job Clarendon";
     font-style: normal;
     font-weight: normal;
