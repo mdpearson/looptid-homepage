@@ -211,6 +211,7 @@ hr {
   width: auto;
 }
 
-.internal-links {
+.internal-links,
+footer {
   font-family: "Gimlet Sans Web", sans-serif;
 }
