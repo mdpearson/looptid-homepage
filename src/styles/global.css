@@ -5,8 +5,10 @@
  */
 
 :root {
-  --accent: #2337ff;
-  --accent-dark: #000d8a;
+  --accent: #3d8bfd;
+  --accent-dark: #084298;
+  --accent-hover: #0a58ca;
+  --accent-active: #0a58ca;
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
@@ -103,9 +105,13 @@ b {
 }
 a {
   color: var(--accent);
+  transition: color 0.15s ease-in-out;
 }
 a:hover {
-  color: var(--accent);
+  color: var(--accent-hover);
+}
+a:active {
+  color: var(--accent-active);
 }
 p a {
   text-decoration: none;
