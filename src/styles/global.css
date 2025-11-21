@@ -19,37 +19,55 @@
     0 16px 32px rgba(var(--gray), 33%);
 }
 @font-face {
-  font-family: 'Gimlet Sans UnMono Web';
+  font-family: "Gimlet Sans UnMono";
   font-style: normal;
   font-weight: 300 800;
-  src: url('/fonts/GimletSansUnMono[opsz,slnt,wght]_BETA.woff2') format("woff2");
+  src: url("/fonts/GimletSansUnMono[opsz,slnt,wght]_BETA.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Gimlet Sans Web';
+  font-family: "Gimlet Sans";
   font-weight: 300 900;
-  src: url('/fonts/GimletSansVariable[ital,opsz,wght].woff2') format("woff2"),
-       url('/fonts/GimletSansVariable[ital,opsz,wght].woff') format("woff");
+  src: url("/fonts/GimletSansVariable[ital,opsz,wght].woff2") format("woff2"),
+       url("/fonts/GimletSansVariable[ital,opsz,wght].woff") format("woff");
 }
 
 @font-face {
-    src: url('/fonts/FernVariable-Roman-VF.woff2') format("woff2"),
-         url('/fonts/FernVariable-Roman-VF.woff') format("woff");
-    font-family: 'Fern Web';
+    src: url("fonts/JobClarendonText-Regular.woff2") format("woff2"),
+         url("fonts/JobClarendonText-Regular.woff") format("woff");
+    font-family: "Job Clarendon";
     font-style: normal;
-    font-weight: 400 800;
-}
+    font-weight: normal;
+    }
+
 
 @font-face {
-    src: url('/fonts/FernVariable-Italic-VF.woff2') format("woff2"),
-         url('/fonts/FernVariable-Italic-VF.woff') format("woff");
-    font-family: 'Fern Web';
+    src: url("/fonts/JobClarendonText-Italic.woff2") format("woff2"),
+         url("/fonts/JobClarendonText-Italic.woff") format("woff");
+    font-family: "Job Clarendon";
     font-style: italic;
-    font-weight: 400 800;
-}
+    font-weight: normal;
+    }
+
+@font-face {
+    src: url("/fonts/JobClarendonText-Bold.woff2") format("woff2"),
+         url("/fonts/JobClarendonText-Bold.woff") format("woff");
+    font-family: "Job Clarendon";
+    font-style: normal;
+    font-weight: bold;
+    }
+
+
+@font-face {
+    src: url("/fonts/JobClarendonText-BoldItalic.woff2") format("woff2"),
+         url("/fonts/JobClarendonText-BoldItalic.woff") format("woff");
+    font-family: "Job Clarendon";
+    font-style: italic;
+    font-weight: bold;
+    }
 
 body {
-  font-family: "Fern Web", serif;
+  font-family: "Job Clarendon", serif;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -58,9 +76,9 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: rgb(var(--gray-dark));
-  font-size: 18px;
-  line-height: 1.5;
-  font-variation-settings: 'opsz' 18;
+  font-size: 15px;
+  line-height: 1.7;
+  font-variation-settings: "opsz" 12;
 }
 main {
   width: 720px;
@@ -76,28 +94,28 @@ h5,
 h6,
 label {  margin: 0 0 0.5rem 0;
   color: rgb(var(--black));
-  font-family: "Gimlet Sans Web", sans-serif;
+  font-family: "Gimlet Sans", sans-serif;
   line-height: 1.2;
 }
 h1 {
   font-size: 2.0em; /* 36px at 16px base */
-  font-variation-settings: 'opsz' 36;
+  font-variation-settings: "opsz" 36;
 }
 h2 {
   font-size: 1.75em; /* ~32px at 16px base */
-  font-variation-settings: 'opsz' 32;
+  font-variation-settings: "opsz" 32;
 }
 h3 {
   font-size: 1.5em; /* ~27px at 16px base */
-  font-variation-settings: 'opsz' 27;
+  font-variation-settings: "opsz" 27;
 }
 h4 {
   font-size: 1.2em; /* ~22px at 16px base */
-  font-variation-settings: 'opsz' 22;
+  font-variation-settings: "opsz" 22;
 }
 h5 {
   font-size: 1em; /* ~18px base */
-  font-variation-settings: 'opsz' 18;
+  font-variation-settings: "opsz" 18;
 }
 strong,
 b {
@@ -189,11 +207,12 @@ hr {
 .brand-lockup {
   align-items: center;
   display: flex;
-  gap: 0em; /* space between logo and text */
+  gap: 0.5em; /* space between logo and text */
 }
 
 .brand-lockup h2 {
-  font-family: "Gimlet Sans UnMono Web", monospace;
+  font-family: "Gimlet Sans UnMono", monospace;
+  letter-spacing: 0.15em;
 }
 
 .brand-lockup img {
@@ -206,5 +225,5 @@ hr {
 
 .internal-links,
 footer {
-  font-family: "Gimlet Sans Web", sans-serif;
+  font-family: "Gimlet Sans", sans-serif;
 }
