@@ -55,7 +55,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     const formData = new FormData(form);
-    
+
     // Get the Turnstile token
     const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
     if (!turnstileToken) {
@@ -67,7 +67,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
       return;
     }
-    
+
     // Build data object explicitly
     const data = {
       name: formData.get('name'),
