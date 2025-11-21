@@ -55,8 +55,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     }
 
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
+    
     // Get the Turnstile token
     const turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
     if (!turnstileToken) {
@@ -68,7 +67,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
       return;
     }
-    data['cf-turnstile-response'] = turnstileToken;
+    
+    // Build data object explicitly
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      organization: formData.get('organization') || '',
+      message: formData.get('message'),
+      'cf-turnstile-response': turnstileToken
+    };
 
     try {
       const response = await fetch('/api/contact', {
