@@ -54,7 +54,8 @@ body {
   background: linear-gradient(var(--gray-gradient)) no-repeat;
   background-size: 100% 600px;
   word-wrap: break-word;
-  overflow-wrap: break-word;  color: rgb(var(--gray-dark));
+  overflow-wrap: break-word;
+  color: rgb(var(--gray-dark));
   font-size: 18px;
   line-height: 1.5;
   font-variation-settings: 'opsz' 18;
