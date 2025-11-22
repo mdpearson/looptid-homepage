@@ -1,0 +1,18 @@
+{
+  "customSyntax": "postcss-html",
+  "extends": [
+    "stylelint-config-html",
+    "stylelint-config-standard"
+  ],
+  "ignoreFiles": ["dist/**/*"],
+  "rules": {
+    "alpha-value-notation": "number",
+    "color-function-notation": "legacy",
+    "custom-property-pattern": null,
+    "media-feature-range-notation": "prefix",
+    "no-descending-specificity": null,
+    "property-no-deprecated": null,
+    "selector-class-pattern": null,
+    "shorthand-property-no-redundant-values": null
+  }
+}
