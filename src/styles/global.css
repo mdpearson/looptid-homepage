@@ -9,9 +9,9 @@
   --accent-active: #fd7e14;
   --accent-hover: #0d6efd;
   --box-shadow:
-    0 2px 6px rgba(var(--gray), 25%),
-    0 8px 24px rgba(var(--gray), 33%),
-    0 16px 32px rgba(var(--gray), 33%);
+    0 2px 6px rgb(var(--gray), 25%),
+    0 8px 24px rgb(var(--gray), 33%),
+    0 16px 32px rgb(var(--gray), 33%);
   --black: 15, 18, 25;
   --error-bg: #f8d7da; /* bootstrap red-100 */
   --error-border: #ea868f; /* bootstrap red-300 */
@@ -19,7 +19,7 @@
   --focus-ring: #0a58ca20; /* --accent with 1/8 opacity */
   --gray: 96, 115, 159;
   --gray-dark: 34, 41, 57;
-  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+  --gray-gradient: rgb(var(--gray-light), 50%), #fff;
   --gray-light: 229, 233, 240;
   --success-bg: #d1e7dd; /* bootstrap green-100 */
   --success-border: #75b798; /* bootstrap green-300 */
@@ -158,7 +158,7 @@ h6 {
   color: rgb(var(--black));
   font-family: "Gimlet Sans", sans-serif;
   line-height: 1.2;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem;
 }
 
 h1 {
@@ -224,7 +224,7 @@ label {
   font-family: "Gimlet Sans", sans-serif;
   font-weight: 600;
   line-height: 1.2;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem;
 }
 
 p {
