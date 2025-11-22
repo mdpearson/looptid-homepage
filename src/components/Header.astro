@@ -1,8 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
-import logo from '/public/looptid-logo-transparent.png';
 
 const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
 const isHome = pathname === '/' || pathname === '';
@@ -11,10 +9,9 @@ const isHome = pathname === '/' || pathname === '';
 <header>
 	<nav>
 		<div class="brand-lockup">
-		<Image src={logo} alt="Looptid Microsystems Logo" loading="eager" />
-		<h2>
-			<a href="/" class:list={{ 'disabled-link': isHome }}>{SITE_TITLE.toUpperCase()}</a>
-		</h2>
+			<h2>
+				<a href="/" class:list={{ 'disabled-link': isHome }}>{SITE_TITLE.toUpperCase()}</a>
+			</h2>
 		</div>
 		<div class="internal-links">
 			<HeaderLink href="/">home</HeaderLink>
