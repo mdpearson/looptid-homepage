@@ -72,28 +72,6 @@
        url("/fonts/JobClarendonText-BoldItalic.woff") format("woff");
 }
 
-body {
-  background: linear-gradient(var(--gray-gradient)) no-repeat;
-  background-size: 100% 600px;
-  color: rgb(var(--gray-dark));
-  font-family: "Job Clarendon", serif;
-  font-size: 1rem;
-  font-variation-settings: "opsz" 12;
-  line-height: 1.7;
-  margin: 0;
-  overflow-wrap: break-word;
-  padding: 0;
-  text-align: left;
-  word-wrap: break-word;
-}
-
-main {
-  margin: auto;
-  max-width: calc(100% - 2em);
-  padding: 3em 1em;
-  width: 720px;
-}
-
 a {
   color: var(--accent);
   text-decoration: none;
@@ -120,6 +98,21 @@ blockquote {
   font-size: 1.333em;
   margin: 0;
   padding: 0 0 0 1.25rem;
+}
+
+body {
+  background: linear-gradient(var(--gray-gradient)) no-repeat;
+  background-size: 100% 600px;
+  color: rgb(var(--gray-dark));
+  font-family: "Job Clarendon", serif;
+  font-size: 1rem;
+  font-variation-settings: "opsz" 12;
+  line-height: 1.7;
+  margin: 0;
+  overflow-wrap: break-word;
+  padding: 0;
+  text-align: left;
+  word-wrap: break-word;
 }
 
 button {
@@ -228,6 +221,13 @@ label {
   font-weight: 600;
   line-height: 1.2;
   margin: 0 0 0.5rem;
+}
+
+main {
+  margin: auto;
+  max-width: calc(100% - 2em);
+  padding: 3em 1em;
+  width: 768px;
 }
 
 p {
