@@ -149,6 +149,10 @@ code {
   padding: 0.125rem 0.3125rem;
 }
 
+footer {
+  font-family: "Gimlet Sans", sans-serif;
+}
+
 h1,
 h2,
 h3,
@@ -190,7 +194,6 @@ hr {
   border: none;
   border-top: 1px solid rgb(var(--gray-light));
 }
-
 
 img {
   border-radius: 0.5rem;
@@ -253,6 +256,7 @@ table {
 .brand-lockup h2 {
   font-family: "Gimlet Sans UnMono", monospace;
   letter-spacing: 0.15em;
+  white-space: nowrap;
 }
 
 .brand-lockup h2 a,
@@ -268,9 +272,9 @@ table {
   width: auto;
 }
 
-.internal-links,
-footer {
+.internal-links {
   font-family: "Gimlet Sans", sans-serif;
+  white-space: nowrap;
 }
 
 .prose p {
@@ -304,14 +308,4 @@ footer {
   position: absolute !important;
   white-space: nowrap;
   width: 1px;
-}
-
-@media (max-width: 720px) {
-  body {
-    font-size: 1.125rem;
-  }
-
-  main {
-    padding: 1em;
-  }
 }

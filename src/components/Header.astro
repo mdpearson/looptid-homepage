@@ -31,6 +31,20 @@ const isHome = pathname === '/' || pathname === '';
 		padding: 0 1em;
 	}
 
+	h2 {
+		font-size: 1em;
+		margin: 0;
+	}
+
+	h2 a {
+		text-decoration: none;
+	}
+
+	h2 a.disabled-link {
+		cursor: default;
+		pointer-events: none;
+	}
+
 	nav {
 		align-items: center;
 		display: flex;
@@ -53,22 +67,19 @@ const isHome = pathname === '/' || pathname === '';
 		text-decoration: none;
 	}
 
-	h2 {
-		display: flex;
-		font-size: 1em;
-		margin: 0;
-	}
-
-	h2 a {
-		text-decoration: none;
-	}
-
-	h2 a.disabled-link {
-		cursor: default;
-		pointer-events: none;
-	}
-
 	@media (max-width: 720px) {
+		nav {
+			flex-direction: column;
+		}
+
+		nav a {
+			padding: 0em 0.5em 0em 0.5em;
+		}
+
+		.brand-lockup {
+			padding-top: 0.25em;
+		}
+
 		.social-links {
 			display: none;
 		}
